@@ -27,7 +27,7 @@ AccelerometerReading::AccelerometerReading(int time_stamp_ms_, int accel_x_axis_
 }
 
 /**
- * @brief Defines an equal-to operator of AccelerometerReading for test purposes
+ * @brief Defines an equal-to operator for AccelerometerReading for test purposes
  * 
  * @param other the object to which it is compared
  * @return true 
@@ -47,7 +47,7 @@ bool AccelerometerReading::operator ==(const AccelerometerReading& other) const
 }
 
 /**
- * @brief Construct a new Accelerometer Data::Accelerometer Data object
+ * @brief Construct a new AccelerometerData::AccelerometerData object
  * 
  * @param dataFilePath the path to the file containing the accelerometer data
  */
