@@ -17,6 +17,8 @@ Where:
 * **accel_y_axis** is an integer number representing the y-axis reading of the accelerometer in [mg]
 * **accel_z_axis** is an integer number representing the z-axis reading of the accelerometer in [mg]
 
+In the context of this project, **g** is the Earth's gravity acceleration.
+
 ### Attitude Estimation Data
 
 The output attitude estimation data file contains attitude estimation data whose lines follow the format:
@@ -87,7 +89,7 @@ Then, I set up my git environment by creating a new project and repository and d
 
 ### Coding and Testing
 
-Having a design plan for the program and my git and VSCode environments set up, I could finally start developping. For each one of the important blocks of code, firstly I wrote the corresponding .h and .cpp files and then I created another .cpp file to test it. A test program was made for each one of the classes as well as for the function that writes the output file. Once I finished, tested and approved a given block of code, I pushed the modifications to git and moved to the next block. Each one of the more important commits of the project also received a git tag for semantic versioning.
+Having a design plan for the program and my git and VSCode environments set up, I could finally start developing. For each one of the important blocks of code, firstly I wrote the corresponding .h and .cpp files and then I created another .cpp file to test it. A test program was made for each one of the classes as well as for the function that writes the output file. Once I finished, tested and approved a given block of code, I pushed the modifications to git and moved to the next block. Each one of the more important commits of the project also received a git tag for semantic versioning.
 
 ### Design Corrections
 
