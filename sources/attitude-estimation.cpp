@@ -59,3 +59,49 @@ AttitudeEstimation::AttitudeEstimation(int time_stamp_ms_, double roll_, double 
     roll = roll_;
     pitch = pitch_;
 }
+
+/**
+ * @brief Defines an equal-to operator for testing purposes
+ * 
+ * @param other The struct to which it is compared
+ * @return true 
+ * @return false 
+ */
+bool AttitudeEstimation::operator ==(const AttitudeEstimation& other) const
+{
+    double tolerance = 0.0001;
+    if((time_stamp_ms == other.time_stamp_ms) && 
+        (std::abs(roll - other.roll) <= tolerance) &&
+        (std::abs(pitch - other.pitch) <= tolerance)) {
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+/**
+ * @brief Function that writes a file containg attitude estimation data to a given file path
+ * 
+ * @param attitudeEstimation A vector containing the estimated attitude data
+ * @param attitudeEstimationFilePath The path to the attitude estimation data file to be created
+ */
+void writeAttitudeEstimationFile(std::vector<AttitudeEstimation> attitudeEstimation, std::string attitudeEstimationFilePath)
+{
+    // Create attitude estimation data file
+    std::ofstream attitudeEstimationFile;
+    attitudeEstimationFile.open(attitudeEstimationFilePath);
+
+    // Write the attitude estimation data to the file
+    if(attitudeEstimationFile.is_open())
+    {
+        for(int i=0; i<attitudeEstimation.size(); i++){
+            attitudeEstimationFile << attitudeEstimation[i].time_stamp_ms << "; " << attitudeEstimation[i].roll << "; " << attitudeEstimation[i].pitch << '\n';
+        }
+        attitudeEstimationFile.close();
+        std::cout << "Attitude estimation data successfully written to " << attitudeEstimationFilePath << '\n';
+    }
+    else {
+        std::cout << "Could not write attitude estimation data to " << attitudeEstimationFilePath << '\n';
+    }
+}

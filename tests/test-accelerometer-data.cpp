@@ -1,7 +1,7 @@
 /**
  * @file test-accelerometer-data.cpp
  * @author Lucas Camargo da Silva (lucas.camargodasilva@hotmail.com)
- * @brief Program to test the class AccelerometerData
+ * @brief Program to test the AccelerometerData class
  * @date 2022-09-26
  * 
  * @copyright Copyright (c) 2022

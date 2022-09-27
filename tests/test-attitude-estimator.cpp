@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
 
     // Check if the expected attitude estimations are equal to the actual attitude estimations calculated by AttitudeEstimator
     bool failed = false;
-    float tolerance = 0.001;
+    float tolerance = 0.0001;
     for (int i = 0; i < expectedEstimation.size(); i++) {
         if (std::abs(expectedEstimation[i].roll - actualEstimation[i].roll) > tolerance) {
             failed = true;

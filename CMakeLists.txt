@@ -11,7 +11,7 @@
 # Set minimum CMake version
 cmake_minimum_required(VERSION 3.0.0)
 
-# Ser project name
+# Set project name
 project(attitude-estimation)
 
 # Main code
@@ -36,12 +36,19 @@ add_executable(test-attitude-estimator
   ${CMAKE_SOURCE_DIR}/sources/attitude-estimator.cpp
 )
 
+# Test code for writeAttitudeEstimationFile function
+add_executable(test-write-attitude-estimation-file
+  ${CMAKE_SOURCE_DIR}/tests/test-write-attitude-estimation-file.cpp
+  ${CMAKE_SOURCE_DIR}/sources/attitude-estimation.cpp
+)
+
 # Enable testing functionality
 enable_testing()
 
 # Define tests
 add_test(NAME test-attitude-data COMMAND $<TARGET_FILE:test-accelerometer-data>)
 add_test(NAME test-attitude-estimator COMMAND $<TARGET_FILE:test-attitude-estimator>)
+add_test(NAME test-write-attitude-estimation-file COMMAND $<TARGET_FILE:test-write-attitude-estimation-file>)
 
 # Include necessary directories for main code and tests
 target_include_directories(attitude-estimation PRIVATE
@@ -53,5 +60,9 @@ target_include_directories(test-accelerometer-data PRIVATE
 )
 
 target_include_directories(test-attitude-estimator PRIVATE
+  ${CMAKE_SOURCE_DIR}/headers
+)
+
+target_include_directories(test-write-attitude-estimation-file PRIVATE
   ${CMAKE_SOURCE_DIR}/headers
 )

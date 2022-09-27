@@ -8,6 +8,11 @@
  * 
  */
 
+#include <iostream>
+#include <vector>
+#include <fstream>
+#include <string>
+
 /**
  * @brief Accelerometer reading data represented by a struct containing the timestamp
  * of the reading and its corresponding x, y and z axis measurements.
@@ -59,4 +64,21 @@ struct AttitudeEstimation {
          * @param pitch_ The estimated pitch angle in [rad]
          */
         AttitudeEstimation(int time_stamp_ms_, double roll_, double pitch_);
+
+        /**
+         * @brief Defines an equal-to operator for testing purposes
+         * 
+         * @param other The struct to which it is compared
+         * @return true 
+         * @return false 
+         */
+        bool operator ==(const AttitudeEstimation& other) const;
 };
+
+/**
+ * @brief Function that writes a file containing attitude estimation data
+ * 
+ * @param attitudeEstimation A vector containing the estimated attitude data
+ * @param attitudeEstimationFilePath The path to the attitude estimation data file to be created
+ */
+void writeAttitudeEstimationFile(std::vector<AttitudeEstimation> attitudeEstimation, std::string attitudeEstimationFilePath);
