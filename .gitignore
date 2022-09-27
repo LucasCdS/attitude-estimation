@@ -1,2 +1,8 @@
-# ignore build folder
+# Ignore build folder
 build/
+
+# Ignore dummy data file for testing
+dummy_accelerometer_data.log
+
+# Ignore VSCode files
+.vscode/
