@@ -21,10 +21,10 @@
  */
 struct AccelerometerReading {
     public:
-        int time_stamp_ms; // the timestamp of the measurements
-        int accel_x_axis; // the x axis measurement
-        int accel_y_axis; // the y axis measurement
-        int accel_z_axis; // the z axus measurement
+        int time_stamp_ms; // the timestamp of the measurements in [ms]
+        int accel_x_axis; // the x axis measurement in [mg], where g is the Earth's gravity acceleration
+        int accel_y_axis; // the y axis measurement in [mg], where g is the Earth's gravity acceleration
+        int accel_z_axis; // the z axus measurement in [mg], where g is the Earth's gravity acceleration
 
         /**
          * @brief Construct a new AccelerometerReading struct object
