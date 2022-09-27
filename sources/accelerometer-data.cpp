@@ -11,45 +11,9 @@
 #include "accelerometer-data.h"
 
 /**
- * @brief Construct a new AccelerometerReading struct object
- * 
- * @param time_stamp_ms_ 
- * @param accel_x_axis_ 
- * @param accel_y_axis_ 
- * @param accel_z_axis_ 
- */
-AccelerometerReading::AccelerometerReading(int time_stamp_ms_, int accel_x_axis_, int accel_y_axis_, int accel_z_axis_)
-{
-    time_stamp_ms = time_stamp_ms_;
-    accel_x_axis = accel_x_axis_;
-    accel_y_axis = accel_y_axis_;
-    accel_z_axis = accel_z_axis_;
-}
-
-/**
- * @brief Defines an equal-to operator for AccelerometerReading for test purposes
- * 
- * @param other the object to which it is compared
- * @return true 
- * @return false 
- */
-bool AccelerometerReading::operator ==(const AccelerometerReading& other) const
-{
-    if((time_stamp_ms == other.time_stamp_ms) && 
-        (accel_x_axis == other.accel_x_axis) &&
-        (accel_y_axis == other.accel_y_axis) &&
-        (accel_z_axis == other.accel_z_axis)) {
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-
-/**
  * @brief Construct a new AccelerometerData::AccelerometerData object
  * 
- * @param dataFilePath the path to the file containing the accelerometer data
+ * @param dataFilePath The path to the file containing the accelerometer data
  */
 AccelerometerData::AccelerometerData(std::string dataFilePath)
 {
@@ -59,7 +23,7 @@ AccelerometerData::AccelerometerData(std::string dataFilePath)
 /**
  * @brief Get the accelerometer data
  * 
- * @return std::vector<AccelerometerReading> 
+ * @return std::vector<AccelerometerReading> A vector of accelerometer data readings
  */
 std::vector<AccelerometerReading> AccelerometerData::getAccelerometerData()
 {
@@ -69,8 +33,8 @@ std::vector<AccelerometerReading> AccelerometerData::getAccelerometerData()
 /**
  * @brief Read accelerometer data from a given file
  * 
- * @param dataFilePath 
- * @return std::vector<AccelerometerReading> 
+ * @param dataFilePath The path to the file containing the accelerometer data
+ * @return std::vector<AccelerometerReading> A vector of accelerometer data readings
  */
 std::vector<AccelerometerReading> AccelerometerData::readDataFromFile(std::string dataFilePath)
 {

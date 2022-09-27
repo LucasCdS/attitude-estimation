@@ -10,21 +10,7 @@
 
 #include <vector>
 #include <cmath>
-#include "accelerometer-data.h"
-
-/**
- * @brief Attitude estimation represented by a struct containing the timestamp
- * of the corresponding measurements and the estimated roll and pitch angles.
- * 
- */
-struct AttitudeEstimation {
-    public:
-        int time_stamp_ms; // the timestamp corresponding to the measurements in [ms]
-        double roll; // the estimated roll angle in [rad]
-        double pitch; // the estimated pitch angle in [rad]
-
-        AttitudeEstimation(int time_stamp_ms_, double roll_, double pitch_);
-};
+#include "attitude-estimation.h"
 
 /**
  * @brief Class that represents a set of attitude estimations through a vector in
@@ -47,7 +33,7 @@ class AttitudeEstimator {
          * @return std::vector<AttitudeEstimation> A vector containing all the estimated attitude data
          */
         std::vector<AttitudeEstimation> getAttitudeEstimation();
-        
+
     private:
         /**
          * @brief Stores the attitude estimation data

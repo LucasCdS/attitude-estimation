@@ -40,7 +40,6 @@ int main(int argc, char *argv[]) {
             failed = true;
             std::cout << "In estimation " << i << " expected pitch " << expectedEstimation[i].pitch << " but actual is pitch " << actualEstimation[i].pitch << " for a tolerance of " << tolerance << '\n';
         }
-        std::cout << "roll = " << std::abs(expectedEstimation[i].roll - actualEstimation[i].roll) << " e pitch = " << std::abs(expectedEstimation[i].pitch - actualEstimation[i].pitch) << '\n';
     }
 
     std::cout << "Class AttitudeEstimator " << ((failed==false)?"PASSED":"FAILED") << " its test\n";

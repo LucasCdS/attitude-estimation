@@ -11,20 +11,6 @@
 #include "attitude-estimator.h"
 
 /**
- * @brief Construct a new AttitudeEstimation::AttitudeEstimation object
- * 
- * @param time_stamp_ms_ The timestamp corresponding to the measurements in [ms]
- * @param roll_ The estimated roll angle in [rad]
- * @param pitch_ The estimated pitch angle in [rad]
- */
-AttitudeEstimation::AttitudeEstimation(int time_stamp_ms_, double roll_, double pitch_)
-{
-    time_stamp_ms = time_stamp_ms_;
-    roll = roll_;
-    pitch = pitch_;
-}
-
-/**
  * @brief Construct a new Attitude Estimator:: Attitude Estimator object
  * 
  * @param accelerometerReading A vector of accelerometer data readings
