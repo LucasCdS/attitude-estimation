@@ -8,6 +8,9 @@
  * 
  */
 
+#ifndef _ATTITUDE_ESTIMATION_H_
+#define _ATTITUDE_ESTIMATION_H_
+
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -82,3 +85,5 @@ struct AttitudeEstimation {
  * @param attitudeEstimationFilePath The path to the attitude estimation data file to be created
  */
 void writeAttitudeEstimationFile(std::vector<AttitudeEstimation> attitudeEstimation, std::string attitudeEstimationFilePath);
+
+#endif

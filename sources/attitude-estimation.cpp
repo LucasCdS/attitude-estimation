@@ -81,13 +81,19 @@ bool AttitudeEstimation::operator ==(const AttitudeEstimation& other) const
 }
 
 /**
- * @brief Function that writes a file containg attitude estimation data to a given file path
+ * @brief Function that writes a file containing attitude estimation data
  * 
  * @param attitudeEstimation A vector containing the estimated attitude data
  * @param attitudeEstimationFilePath The path to the attitude estimation data file to be created
  */
 void writeAttitudeEstimationFile(std::vector<AttitudeEstimation> attitudeEstimation, std::string attitudeEstimationFilePath)
 {
+    // Check if the attitude estimation vector contains data
+    if (attitudeEstimation.size() == 0) {
+        std::cout << "Could not generate an attitude estimation file because the attitude estimation data vector is empty\n";
+        return;
+    }
+
     // Create attitude estimation data file
     std::ofstream attitudeEstimationFile;
     attitudeEstimationFile.open(attitudeEstimationFilePath);
@@ -102,6 +108,6 @@ void writeAttitudeEstimationFile(std::vector<AttitudeEstimation> attitudeEstimat
         std::cout << "Attitude estimation data successfully written to " << attitudeEstimationFilePath << '\n';
     }
     else {
-        std::cout << "Could not write attitude estimation data to " << attitudeEstimationFilePath << '\n';
+        throw std::runtime_error("Error: could not write attitude estimation data to " + attitudeEstimationFilePath);
     }
 }

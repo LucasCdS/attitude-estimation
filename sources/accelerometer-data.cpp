@@ -41,8 +41,7 @@ std::vector<AccelerometerReading> AccelerometerData::readDataFromFile(std::strin
     // Create a stream to read from the file containing the accelerometer data
     std::ifstream accelerometerDataFile(dataFilePath);
     if (!accelerometerDataFile) {
-        std::cout << "Could not open " << dataFilePath << std::endl;
-        return std::vector<AccelerometerReading>();
+        throw std::runtime_error("Error: could not open " + dataFilePath);
     }
 
     // Read, parse and store the accelerometer data

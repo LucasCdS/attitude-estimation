@@ -1,7 +1,7 @@
 ### Project: Attitude Estimation
 ###
-### Description: A program that reads a log file containing data from 
-### an accelerometer and generates an output file with the corresponding
+### Description: Program that reads a log file containing data generated 
+### by an accelerometer and produces an output file with the corresponding
 ### attitude estimation.
 ###
 ### Author: Lucas Camargo da Silva (lucas.camargodasilva@hotmail.com)
@@ -12,7 +12,7 @@
 cmake_minimum_required(VERSION 3.0.0)
 
 # Set project name
-project(attitude-estimation)
+project(attitude-estimation VERSION 1.0.0)
 
 # Main code
 add_executable(attitude-estimation
