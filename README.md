@@ -17,7 +17,7 @@ Where:
 * **accel_y_axis** is an integer number representing the y-axis reading of the accelerometer in [mg]
 * **accel_z_axis** is an integer number representing the z-axis reading of the accelerometer in [mg]
 
-In the context of this project, **g** is the Earth's gravity acceleration.
+In the context of this project, **g** in [mg] is the Earth's gravity acceleration.
 
 ### Attitude Estimation Data
 
